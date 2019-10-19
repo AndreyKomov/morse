@@ -81,18 +81,22 @@ const MORSE_TABLE = {
 
 function decode(expr) {
     let stringEmpty = "";
-    for (let i = 0; i < 10; i = i + 1)
-
-    {
-        const part = expr.slice(i, i * 10);
-        const partMorse = MORSE_TABLE[part]
+    for (let i=0; i< expr.length/10; i=i+1) {
+        const part = expr.slice(i*10, (i+1)*10);
+        const partMorse = MORSE_TABLE[part];
         stringEmpty = stringEmpty + partMorse;
+
+        console.log(stringEmpty);
+
+        
     };
 
-    console.log(part);
-    // write your solution here
-}
+    return stringEmpty;
+    
 
-module.exports = {
-    decode
+    // write your solution here
+};
+
+module.exports = { decode
+    
 }
